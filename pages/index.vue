@@ -13,12 +13,25 @@ export default {
     }
   },
   mounted() {
+    this.firstTouch()
     // this.initAnimate()
-    this.openHand()
+    // this.openHand()
   },
   methods: {
     addZero(num) {
       return num >= 10 ? num : '0' + num
+    },
+    async firstTouch() {
+      let i = 0
+      let timer = setInterval(() => {
+        i ++
+        if(i == 12){
+          clearInterval(timer)
+          timer = null
+          return 
+        }
+        this.PngSequence = require(`./img/firstTouch/bearPawFirstTouch_0${this.addZero(i)}.jpg`)
+      }, 80)
     },
     async initAnimate() {
       let i = 0
