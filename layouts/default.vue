@@ -3,7 +3,16 @@
     <Nuxt />
   </div>
 </template>
+<script lang="js">
+import Vue from 'vue'
+export default Vue.extend({
+  mounted() {
+  },
+  methods: {
 
+  }
+})
+</script>
 <style>
 html {
   font-family:
