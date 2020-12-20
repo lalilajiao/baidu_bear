@@ -36,11 +36,13 @@ export default {
   css: [
     '~/assets/css/normalize.css',
     '~/assets/css/responsive.css',
-    '~/assets/css/animate.css'
+    '~/assets/css/animate.css',
+    '~/assets/css/swiper-3.4.2.min.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/assets/js/swiper-3.4.2.min.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
