@@ -11,6 +11,7 @@
       <div @click="goPlay" class="go animate__animated  animate__pulse animate__delay-4s animate__infinite" :style="{opacity: goOpaicty}"></div>
       <div class="bear-hand" :style="{backgroundPosition: bearHandPosition, height: bearHeight + 'px'}"></div>
     </div>
+    <div class="logo" />
   </div>
 </template>
 <script lang="js">
@@ -27,14 +28,21 @@ const imgs = [
   require('./img/hand.png'),
   require('./img/heart.png'),
   require('./img/hi.png'),
-  require('./img/logo.png'),
+  require('~/assets/img/logo.png'),
   require('./img/lt-hand.png'),
   require('./img/lunz.png'),
   require('./img/mf.png'),
   require('./img/slwq.png'),
   require('./img/star.png'),
   require('./img/yzlw.png'),
-  require('./img/guide.png')
+  require('./img/guide.png'),
+  require('./img/input.png'),
+  require('./img/paint.png'),
+  require('./img/gamepad.png'),
+]
+
+const videos = [
+  require('./video/qingwa.mp4'),
 ]
 
 const totalStep = 12
@@ -47,11 +55,12 @@ export default Vue.extend({
       screenWidth: 0,
       bearHeight: 0,
       bearHandPosition: '0px 0px',
-      goOpaicty: 0
+      goOpaicty: 0,
     }
   },
   mounted() {
     this.preloadImages()
+    // this.preloadVideos()
     this.init()
   },
   methods: {
@@ -74,6 +83,29 @@ export default Vue.extend({
         };
       }
     },
+    preloadVideos(){
+      // var req = new XMLHttpRequest();
+      // req.open('GET', require('./video/qingwa.mp4'), true);
+      // req.responseType = 'blob';
+
+      // req.onload = () => {
+      //   // Onload is triggered even on 404
+      //   // so we need to check the status code
+      //   if (this.status === 200) {
+      //       var videoBlob = this.response;
+      //       var vid = URL.createObjectURL(videoBlob); // IE10+
+      //       // Video is now downloaded
+      //       // and we can set it as source on the video element
+      //       console.log(vid)
+      //       this.videoURL =vid
+      //   }
+      // }
+      // req.onerror = function() {
+      //   // Error
+      // }
+
+      // req.send();
+    },
     startAnimation(){
       this.startBearShaking()
     },
@@ -83,9 +115,7 @@ export default Vue.extend({
         if(i == totalStep){
           clearInterval(this.timer)
           this.timer = null
-          // setTimeout(() => {
-          //   this.startBearShaking()
-          // }, 5000);
+          this.startBearShaking()
           return 
         }
         this.bearHandPosition = `${-i * this.screenWidth}px 0` 

@@ -43,4 +43,15 @@ body{
   box-sizing: border-box;
   margin: 0;
 }
+
+.logo{
+  position: absolute;
+  left: 50%;
+  bottom: .2rem;
+  height: .35rem;
+  width: 1.13rem;
+  margin-left: -0.556rem;
+  background-image: url(~assets/img/logo.png);
+  background-size: 100% 100%;
+}
 </style>
