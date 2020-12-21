@@ -1,11 +1,4 @@
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-        router: {
-          base: '/baidu_bear/'
-        }
-      }
-    : {}
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {router: {base: '/baidu_bear/' }}: {}
 
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
@@ -14,9 +7,9 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
-  // router: {
-  //   base: '/baidu_bear/'
-  // },
+  router: {
+    base: '/baidu_bear/'
+  },
   ...routerBase,
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -58,6 +51,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    publicPath: 'https://baidulogo.bj.bcebos.com/baidu_bear/'
   },
 
   server: {
@@ -66,6 +60,8 @@ export default {
   },
 
   generate: {
-    dir: 'docs'
-  }
+    dir: 'docs',
+    subFolders: false 
+  },
+  
 }
